@@ -4,7 +4,7 @@ using Test
 #2a
 @test Point2D(1,3) == Point2D(1,3)
 @test Point3D(1,2,3) == Point3D(1,2,3)
-@test Polygon([Point2D(0,0),Point2D(1,1),Point2D(2,0)]) == Polygon([Point2D(0,0),Point2D(1,1),Point2D(2,0)]) 
+@test Polygon([Point2D(0,0),Point2D(1,1),Point2D(2,0)]) == Polygon([Point2D(0,0),Point2D(1,1),Point2D(2,0)])
 
 #2b
 @test isa(Point2D(1,2),Point2D)
@@ -45,3 +45,11 @@ using Test
 @test isapprox(perimeter(Polygon([Point2D(0,0),Point2D(3,4),Point2D(8,4),Point2D(5,0)])),20)
 @test isapprox(perimeter(Polygon([Point2D(0,0),Point2D(4,0),Point2D(4,1),Point2D(0,1)])),10)
 
+
+triangle = Polygon([Point2D(0, 0), Point2D(1, 0), Point2D(0, 1)])
+rectangle = Polygon([Point2D(0, 0), Point2D(1, 0), Point2D(1, 2), Point2D(0, 2)])
+
+@testset "midpoint caclulations" begin
+  @test midpoint(triangle) == Point2D(1/3,1/3)
+  @test midpoint(rectangle) == Point2D(0.5,1)
+end
