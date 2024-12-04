@@ -1,8 +1,10 @@
 module Geometry
 
+using Statistics
+
 import Base.show, Base.==
 
-export Point2D, Point3D, Polygon, distance, perimeter, isRectangular, Area
+export Point2D, Point3D, Polygon, distance, perimeter, isRectangular, Area, midpoint
 
 #structs:
 """
